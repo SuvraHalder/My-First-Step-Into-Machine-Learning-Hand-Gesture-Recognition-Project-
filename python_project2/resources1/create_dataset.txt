@@ -1,0 +1,28 @@
+1. Outer loop (directory level)
+   for dir_ in os.listdir(DATA_DIR):
+   └── Access each folder in DATA_DIR (each folder represents a class or label).
+
+       2. Inner loop (image level)
+          for img_path in os.listdir(os.path.join(DATA_DIR, dir_)):
+          └── Access each image file inside the current class folder.
+
+              ├── Initialize lists for storing hand coordinates and adjusted landmark data.
+              ├── Load the current image (img_path) using cv2.imread().
+              ├── Convert the loaded image to RGB format for compatibility with MediaPipe.
+              ├── Process the image with hands.process(img_rgb) to detect hands and landmarks.
+
+              3. Check if hand landmarks are detected
+                 if results.multi_hand_landmarks:
+                 └── If a hand is detected, proceed to extract landmarks.
+
+                     4. Loop through each detected hand in the image
+                        for hand_landmarks in results.multi_hand_landmarks:
+                        └── Process each detected hand's landmarks (in case of multiple hands).
+
+                            5. Loop through each of the 21 landmarks for the current hand
+                               for i in range(len(hand_landmarks.landmark)):
+                               └── Access each specific landmark (e.g., wrist, thumb tip) for the current hand.
+
+                                   ├── Extract x and y coordinates for the current landmark
+                                   ├── Append x and y coordinates to x_ and y_ lists (for use in normalization).
+                                   └── Repeat until all 21 landmarks for the hand are processed.

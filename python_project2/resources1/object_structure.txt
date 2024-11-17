@@ -1,0 +1,20 @@
+results
+└── multi_hand_landmarks (List of hands detected in the image)
+    ├── Hand 1 (hand_landmarks)
+    │   └── landmark (List of 21 specific landmarks for Hand 1)
+    │       ├── Landmark 1 (e.g., wrist)  --> (x, y, z coordinates)
+    │       ├── Landmark 2 (e.g., thumb joint) --> (x, y, z coordinates)
+    │       ├── Landmark 3 (e.g., thumb tip) --> (x, y, z coordinates)
+    │       └── ... (up to Landmark 21)
+    │
+    ├── Hand 2 (if detected)
+    │   └── landmark (List of 21 specific landmarks for Hand 2)
+    │       ├── Landmark 1 (e.g., wrist)  --> (x, y, z coordinates)
+    │       ├── Landmark 2 (e.g., thumb joint) --> (x, y, z coordinates)
+    │       └── ... (up to Landmark 21)
+    │
+    └── Hand N (if multiple hands are detected)
+        └── landmark (List of 21 specific landmarks for Hand N)
+            ├── Landmark 1 (e.g., wrist)  --> (x, y, z coordinates)
+            ├── Landmark 2 (e.g., thumb joint) --> (x, y, z coordinates)
+            └── ... (up to Landmark 21)
